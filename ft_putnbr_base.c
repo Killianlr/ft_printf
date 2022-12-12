@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 15:31:07 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/12/08 23:25:51 by kle-rest         ###   ########.fr       */
+/*   Created: 2022/12/12 14:18:05 by kle-rest          #+#    #+#             */
+/*   Updated: 2022/12/12 17:57:46 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_strdup(const char *s)
+int	ft_putnbr_base(long int d, char *base)
 {
-	int		i;
-	char	*sm;
+	int	count;
 
-	i = 0;
-	sm = malloc(sizeof(char) * (ft_strlen((char *)s) + 1));
-	if (!sm)
-		return (0);
-	while (s[i])
+	count = 0;
+	if (d < 0)
 	{
-		sm[i] = s[i];
-		i++;
+		d = d * -1;
+		count += ft_printf_c('-');
 	}
-	sm[i] = '\0';
-	return (sm);
+	if (d < ft_strlen(base))
+		count += ft_printf_c(base[d]);
+	else
+	{
+		count += ft_putnbr_base(d / (ft_strlen(base)), base);
+		count += ft_putnbr_base(d % (ft_strlen(base)), base);
+	}
+	return (count);
 }

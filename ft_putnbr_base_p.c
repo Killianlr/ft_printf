@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_u.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr_base_p.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 22:37:21 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/12/12 17:58:10 by kle-rest         ###   ########.fr       */
+/*   Created: 2022/12/12 17:17:09 by kle-rest          #+#    #+#             */
+/*   Updated: 2022/12/12 17:57:49 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-unsigned int	ft_printf_u(unsigned int nb)
+int	ft_putnbr_base_p(long int d, char *base)
 {
-	int		i;
-	char	*base;
+	int	count;
 
-	i = 0;
-	base = "0123456789";
-	i = ft_putnbr_base(nb, base);
-	return (i);
+	count = 0;
+	if (d < 0)
+		d = d * -1;
+	if (d < ft_strlen(base))
+		count += ft_printf_c(base[d]);
+	else
+	{
+		count += ft_putnbr_base(d / (ft_strlen(base)), base);
+		count += ft_putnbr_base(d % (ft_strlen(base)), base);
+	}
+	return (count);
 }
