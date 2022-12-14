@@ -6,7 +6,7 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 22:15:06 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/12/12 17:58:49 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/12/13 13:49:57 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ unsigned int	ft_printf_u(unsigned int nb);
 unsigned long	ft_printf_p(unsigned long nb);
 int				ft_strlen(char *str);
 int				ft_putnbr_base(long int d, char *base);
-int				ft_putnbr_base_p(long int d, char *base);
+int				ft_putnbr_base_p(unsigned long int d, char *base);
 
 #endif
