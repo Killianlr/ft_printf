@@ -6,13 +6,13 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 23:28:41 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/12/12 17:56:39 by kle-rest         ###   ########.fr       */
+/*   Updated: 2023/05/23 15:24:57 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_strlen(char *str)
+int	ft_strlen_p(char *str)
 {
 	int	i;
 
