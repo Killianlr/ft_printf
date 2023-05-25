@@ -1,4 +1,4 @@
-NAME = ft_printf.a
+NAME = libftprintf.a
 
 SOURCES = ft_printf_c.c \
 	ft_printf_s.c \
@@ -9,7 +9,7 @@ SOURCES = ft_printf_c.c \
 	ft_printf_x.c \
 	ft_printf_X.c \
 	ft_printf.c \
-	ft_strlen.c \
+	ft_strlen_p.c \
 	ft_putnbr_base.c \
 	ft_putnbr_base_p.c \
 
